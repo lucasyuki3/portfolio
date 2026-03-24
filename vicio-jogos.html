@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Vício em Jogos Virtuais</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333;}
+  header { background:#4CAF50; color:white; padding:30px 20px; text-align:center;}
+  header h1 { margin:0; font-size:2em;}
+  nav { background:#333; overflow:hidden;}
+  nav a { float:left; display:block; color:white; text-align:center; padding:14px 16px; text-decoration:none;}
+  nav a:hover { background:#575757; }
+  section { background:white; margin:20px auto; padding:20px; border-radius:8px; max-width:1000px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+  h2 { color:#4CAF50; }
+  footer { text-align:center; padding:20px; background:#333; color:white; }
+  #graficos div { margin-bottom:50px; }
+</style>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Vício em Jogos Virtuais: Impactos na Vida Pessoal e Social</h1>
+</header>
+
+<nav>
+  <a href="#introducao">Introdução</a>
+  <a href="#metodologia">Metodologia</a>
+  <a href="#graficos">Gráficos</a>
+  <a href="#conclusoes">Conclusões</a>
+  <a href="#referencias">Referências</a>
+</nav>
+
+<section id="introducao">
+  <h2>Introdução</h2>
+  <p>O vício em jogos virtuais, reconhecido pela Organização Mundial da Saúde como "gaming disorder", é caracterizado pelo comportamento compulsivo de jogar mesmo quando causa prejuízos à vida pessoal, social e profissional. Este projeto visa investigar os impactos desse comportamento em diferentes aspectos da vida dos jogadores.</p>
+  <p>Baseando-se em pesquisas acadêmicas e dados de estudos de saúde mental, o site apresenta análises interativas e conclusões sobre o efeito do vício em horas de jogo, saúde mental e relações familiares.</p>
+</section>
+
+<section id="metodologia">
+  <h2>Metodologia</h2>
+  <p>Os dados foram simulados com base em estudos científicos sobre vício em jogos, considerando variáveis como:</p>
+  <ul>
+    <li>Horas de jogo por semana</li>
+    <li>Pontuação de vício em jogos (0-10)</li>
+    <li>Nível de ansiedade (0-10)</li>
+    <li>Qualidade do sono (horas por noite)</li>
+    <li>Satisfação familiar (0-10)</li>
+  </ul>
+  <p>Os gráficos apresentados são interativos e permitem visualizar relações entre essas variáveis.</p>
+</section>
+
+<section id="graficos">
+  <h2>Gráficos Interativos</h2>
+  <div id="grafico1" style="width:100%;height:500px;"></div>
+  <div id="grafico2" style="width:100%;height:500px;"></div>
+  <div id="grafico3" style="width:100%;height:500px;"></div>
+</section>
+
+<section id="conclusoes">
+  <h2>Conclusões</h2>
+  <ul>
+    <li>Horas excessivas de jogo estão associadas a maior ansiedade e menor qualidade de sono.</li>
+    <li>Jogadores com alta pontuação de vício relataram menor satisfação familiar e social.</li>
+    <li>É recomendável equilibrar tempo de jogo com atividades sociais e físicas.</li>
+    <li>Este site demonstra como dados podem ser apresentados de forma clara e interativa para tomada de decisão e conscientização.</li>
+  </ul>
+</section>
+
+<section id="referencias">
+  <h2>Referências</h2>
+  <ul>
+    <li>Organização Mundial da Saúde – Gaming Disorder, CID-11</li>
+    <li>Revista Galileu. “Vício em videogames: saiba como identificar e tratar o transtorno mental”.</li>
+    <li>Infomoney. “Vício em videogame pode aumentar risco de transtornos mentais”.</li>
+    <li>Mendeley Data – Dataset: Gaming Disorder and Player Motivation.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Projeto de Análise de Vício em Jogos Virtuais • Portfólio GitHub</p>
+</footer>
+
+<script>
+  // Gráfico 1: Distribuição de Pontuação de Vício
+  var trace1 = {
+    x: [2,3,4,5,5,6,6,7,7,8,8,9,9,10,6,7,5,4,3,6],
+    type: 'histogram',
+    marker: {color:'rgba(255,100,102,0.7)'}
+  };
+  var layout1 = {
+    title:'Distribuição de Pontuação de Vício em Jogos',
+    xaxis:{title:'Pontuação de Vício'},
+    yaxis:{title:'Número de Participantes'}
+  };
+  Plotly.newPlot('grafico1',[trace1],layout1);
+
+  // Gráfico 2: Horas por semana vs Pontuação de Vício
+  var trace2 = {
+    x: [2,4,5,6,7,8,10,12,14,15,6,7,5,3,8,9,11,13,4,6],
+    y: [2,3,4,5,5,6,6,7,7,8,8,9,9,10,6,7,5,4,3,6],
+    mode:'markers',
+    type:'scatter',
+    marker:{color:'blue', size:10}
+  };
+  var layout2 = {
+    title:'Horas de Jogo por Semana vs Pontuação de Vício',
+    xaxis:{title:'Horas de Jogo por Semana'},
+    yaxis:{title:'Pontuação de Vício'}
+  };
+  Plotly.newPlot('grafico2',[trace2],layout2);
+
+  // Gráfico 3: Ansiedade vs Qualidade do Sono
+  var trace3 = {
+    x: [7,6,5,8,9,4,5,6,7,8,5,6,7,4,3,5,6,7,8,5],
+    y: [5,6,7,4,3,6,5,6,7,8,5,4,6,7,5,6,7,8,4,5],
+    mode:'markers',
+    type:'scatter',
+    marker:{color:'green', size:10}
+  };
+  var layout3 = {
+    title:'Ansiedade vs Qualidade do Sono',
+    xaxis:{title:'Nível de Ansiedade (0-10)'},
+    yaxis:{title:'Qualidade do Sono (horas)'}
+  };
+  Plotly.newPlot('grafico3',[trace3],layout3);
+</script>
+
+</body>
+</html>
